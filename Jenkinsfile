@@ -20,4 +20,8 @@ node{
 
         sh "docker build -t jenkins_tuts ."
     }
+
+    stage ("Deploy to Dev") {
+        sh "docker run -d -p 9000:8082 --name from_jenkins jenkins_tuts"
+    }
 }
