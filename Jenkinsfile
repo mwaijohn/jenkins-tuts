@@ -10,9 +10,9 @@ node{
 
     }
 
-    // stage ('package stage') {
+    stage ('package stage') {
 
-    //     sh label: '', script: 'mvn clean package '
+        sh label: '', script: 'mvn clean package'
 
-    // }
+    }
 }
