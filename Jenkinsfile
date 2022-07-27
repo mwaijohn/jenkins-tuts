@@ -15,4 +15,9 @@ node{
         sh label: '', script: 'mvn clean package'
 
     }
+
+    stage ("docker image build") {
+
+        sh "docker build -t jenkins_tuts ."
+    }
 }
