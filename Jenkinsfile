@@ -22,8 +22,16 @@ node{
     }
 
     stage ("Deploy to Dev") {
-        sh "docker stop from_jenkins"
-        sh "docker rm from_jenkins"
+        try{
+            sh "docker stop from_jenkins"
+        }catch(Exception ex){
+
+        }
+        try{
+            sh "docker rm from_jenkins"
+        }catch(Exception ex){
+
+        }
         sh "docker run -d -p 9000:8082 --name from_jenkins jenkins_tuts"
     }
 }
