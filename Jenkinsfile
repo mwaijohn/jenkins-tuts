@@ -25,12 +25,12 @@ node{
         try{
             sh "docker stop from_jenkins"
         }catch(Exception ex){
-
+            echo 'Exception occurred: ' + e.toString()
         }
         try{
             sh "docker rm from_jenkins"
         }catch(Exception ex){
-
+            echo 'Exception occurred: ' + e.toString()
         }
         sh "docker run -d -p 9000:8082 --name from_jenkins jenkins_tuts"
     }
